@@ -25,14 +25,5 @@ const getCity = async (city) => {
     // fetching data
     const response = await fetch(base + query);
     const data = await response.json();
-    return data[0]; // returning first data object of array
+    return data[0]; // returning most relevant city data from array
 }
-
-getCity('tunbridge wells') // calling getCity async function passing hard-coded city name as parameter
-.then(data => {
-    return getWeather(data.Key)
-})
-.then(data => {
-    console.log(data); // logging weather info to the console
-})
-.catch(error => console.log(error));
